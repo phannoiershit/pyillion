@@ -21,4 +21,7 @@ It is designed to be simple, fast, and dependency-free.
 
 ```bash
 pip install pyillion
+```
+# Patch for v1.0.2 (Current):
+Fixed decillion to octodecillion
 
