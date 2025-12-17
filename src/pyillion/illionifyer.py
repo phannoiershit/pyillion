@@ -22,6 +22,20 @@ def il(n: int, bl: bool = False):
         name = "thousand"
     elif n == 2:
         name = "million"
+    elif 10 <= n <= 19:
+        special = {
+        10: "decillion",
+        11: "undecillion",
+        12: "duodecillion",
+        13: "tredecillion",
+        14: "quattuordecillion",
+        15: "quindecillion",
+        16: "sexdecillion",
+        17: "septendecillion",
+        18: "octodecillion",
+        19: "novemdecillion",
+        }
+        name = special[n]
     else:
         base = {
             3: "billion", 4: "trillion", 5: "quadrillion",
@@ -68,6 +82,7 @@ def illionify(n,r=3):
     k = (len(str(n)) - 1) // 3
     a = il(k,True)
     return f"{d(n,a,r)} {il(k)}"
+
 
 
 
