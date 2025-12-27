@@ -117,15 +117,20 @@ def il_short(n: int,bl=False):
         name = units[u] + tens[t] + hundreds[h]
     
     return 1000**n if bl else name
-def illionify(n,r=3):
-    """illionify(n, r=3)\n
-    Convert a large integer into *-illion* long form.
+def illionify(n,r=3,short=False):
+    """illionify(n, r=3, short=False)\n
+    Convert a large integer into *-illion* long form or short form.
     """
     if n < 1000:
         return n
+    elif short:
+        k = (len(str(n)) - 1) // 3
+        a = il_short(k,True)
+        return f"{d(n,a,r)} {il_short(k)}"
     k = (len(str(n)) - 1) // 3
     a = il(k,True)
     return f"{d(n,a,r)} {il(k)}"
+
 
 
 
